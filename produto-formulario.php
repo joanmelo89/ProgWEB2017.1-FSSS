@@ -15,7 +15,7 @@ include("cabecalho.php"); ?>
 	</tr>
 	<tr>
 	<td><input class="btn btn-primary" type="submit" value="Cadastrar"></td>
-	<td><input class="btn btn-primary" type="reset" value="Limpar"></td>
+	<td><input class="btn btn-danger" type="reset" value="Limpar"></td>
 	</tr>
 	<!--comentario-->
 	</table>
