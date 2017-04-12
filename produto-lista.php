@@ -1,17 +1,11 @@
 <?php include("cabecalho.php");?>
+<?php include("banco-produto.php");?>
 <?php 
 //importou o srcipt que conecta que tem os parâmetros de conexão do banco de dados
 include("conecta.php");?>
 <?php
 //criação da função de listagem de produtos
-function listaProdutos($conexao){
-	$produtos = array();
-	$resultado = mysqli_query($conexao, "select * from produtos");
-	while($produto = mysqli_fetch_assoc($resultado)){
-		array_push($produtos, $produto);
-	}
-	return $produtos;
-}
+
 
 $produtos = listaProdutos($conexao);
 ?>
@@ -23,6 +17,7 @@ foreach($produtos as $produto):
 <tr>
 <td><?php echo $produto['nome'];?></td>
 <td><?php echo "R$ ".$produto['preco'];?></td>
+<td><a class="text-danger" href="remove-produto.php?id=<?php echo $produto['id'];?>">remover</a></td>
 </tr>
 <?php
 endforeach
