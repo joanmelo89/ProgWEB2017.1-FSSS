@@ -17,7 +17,14 @@ foreach($produtos as $produto):
 <tr>
 <td><?php echo $produto['nome'];?></td>
 <td><?php echo "R$ ".$produto['preco'];?></td>
-<td><a class="text-danger" href="remove-produto.php?id=<?php echo $produto['id'];?>">remover</a></td>
+<td><?php echo substr($produto['descricao'], 0, 20);?></td>
+<td>
+	<form action="remove-produto.php" method="post"> 
+		<input type="hidden" name="id" value="<?php echo $produto['id'];?>">
+		<button class="btn btn-danger">remover</button>
+
+	</form>
+</td>
 </tr>
 <?php
 endforeach

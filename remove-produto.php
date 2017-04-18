@@ -3,7 +3,7 @@
 <?php include("banco-produto.php");?>
 <?php
 //pega a id
-$id = $_GET['id'];
+$id = $_POST['id'];
 //chama a função de delete de produtos
 removeProduto($conexao, $id);
 

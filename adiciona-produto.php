@@ -6,12 +6,13 @@
 //Função para inserir produtos no banco
 
 //Pega os valores do formulário que vem na URL ("name")
-$nome = $_GET["nome"];
-$preco = $_GET["preco"];
+$nome = $_POST["nome"];
+$preco = $_POST["preco"];
+$descricao = $_POST["descricao"];
 
 
 
-if(insereProduto($conexao, $nome, $preco)){?>
+if(insereProduto($conexao, $nome, $preco, $descricao)){?>
 	<p class="text-success">Produto <?php echo $nome;?> , <?php echo $preco;?> adicionado com sucesso!</p>
 	
 <?php } else{ 
