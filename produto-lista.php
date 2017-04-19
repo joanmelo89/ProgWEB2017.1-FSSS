@@ -18,6 +18,7 @@ foreach($produtos as $produto):
 <td><?php echo $produto['nome'];?></td>
 <td><?php echo "R$ ".$produto['preco'];?></td>
 <td><?php echo substr($produto['descricao'], 0, 20);?></td>
+<td><?php echo $produto['categoria_nome'];?></td>
 <td>
 	<form action="remove-produto.php" method="post"> 
 		<input type="hidden" name="id" value="<?php echo $produto['id'];?>">
@@ -25,6 +26,7 @@ foreach($produtos as $produto):
 
 	</form>
 </td>
+
 </tr>
 <?php
 endforeach
