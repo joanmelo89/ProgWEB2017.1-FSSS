@@ -10,6 +10,14 @@ include("conecta.php");?>
 $produtos = listaProdutos($conexao);
 ?>
 <table class="table table-striped table-bordered">
+<tr>
+<td><b>Nome</b></td>
+<td><b>Preço</b></td>
+<td><b>Descrição</b></td>
+<td><b>Categoria</b></td>
+<td><b>Situação</b></td>
+<td><b>Ação</b></td>
+</tr>
 <?php
 //criação do FOR melhorado (foreach) par fazer impressão dos dados do banco
 foreach($produtos as $produto):
@@ -19,6 +27,15 @@ foreach($produtos as $produto):
 <td><?php echo "R$ ".$produto['preco'];?></td>
 <td><?php echo substr($produto['descricao'], 0, 20);?></td>
 <td><?php echo $produto['categoria_nome'];?></td>
+<td>
+	<?php
+		if($produto['usado'] == 0){
+			echo "novo";
+		}else{
+			echo "usado";
+		}
+	?>
+</td>
 <td>
 	<form action="remove-produto.php" method="post"> 
 		<input type="hidden" name="id" value="<?php echo $produto['id'];?>">
