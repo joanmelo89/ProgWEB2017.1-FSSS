@@ -37,6 +37,9 @@ foreach($produtos as $produto):
 	?>
 </td>
 <td>
+<a class="btn btn-primary" href="produto-altera-formulario.php?id=<?php echo $produto['id'];?>">alterar</a>
+</td>
+<td>
 	<form action="remove-produto.php" method="post"> 
 		<input type="hidden" name="id" value="<?php echo $produto['id'];?>">
 		<button class="btn btn-danger">remover</button>
