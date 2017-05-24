@@ -1,8 +1,9 @@
 <?php include("cabecalho.php");?>
 <?php include("conecta.php");?>
 <?php include("banco-produto.php");?>
+<?php include("logica-usuario.php");?>
 <?php
-
+verificaUsuario();
 //Função para inserir produtos no banco
 
 //Pega os valores do formulário que vem na URL ("name")

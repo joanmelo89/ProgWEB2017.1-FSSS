@@ -1,6 +1,7 @@
 <?php 
 //Inclusão de arquivos PHP em outro arquivo PHP
 include("cabecalho.php"); 
+include("logica-usuario.php");
 ?>
 <?php if(isset($_GET["login"]) && $_GET["login"] == true) {?>
 	<p class="alert-success">Logado com sucesso!</p>
@@ -8,9 +9,14 @@ include("cabecalho.php");
 <?php if(isset($_GET["login"]) && $_GET["login"] == 0) {?>
 	<p class="alert-danger">Usuário e senha inválidos!</p>
 	<?php }?>
+
+<?php if(isset($_GET["falhaDeSeguranca"]) && $_GET["falhaDeSeguranca"] == true) {?>
+	<p class="alert-danger">Você não tem acesso a essa funcionalidade porque você não está logado!</p>
+	<?php }?>
+
 		<h1>Bem-vindo</h1>
-		<?php if(isset($_COOKIE["usuario_logado"])) {?>
-				<p class="alert-success">Você está logado como <?php echo $_COOKIE["usuario_logado"]?>.</p>
+		<?php if(usuarioEstaLogado()) {?>
+				<p class="alert-success">Você está logado como <?php echo usuarioLogado();?>.</p>
 				<?php }else{?>
 		<h2>Login</h2>
 		

@@ -1,12 +1,13 @@
 <?php include("cabecalho.php");?>
 <?php include("banco-produto.php");?>
+<?php include("logica-usuario.php");?>
 <?php 
 //importou o srcipt que conecta que tem os parâmetros de conexão do banco de dados
 include("conecta.php");?>
 <?php
 //criação da função de listagem de produtos
 
-
+verificaUsuario();
 $produtos = listaProdutos($conexao);
 ?>
 <table class="table table-striped table-bordered">
