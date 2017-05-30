@@ -3,19 +3,23 @@
 include("cabecalho.php"); 
 include("logica-usuario.php");
 ?>
-<?php if(isset($_GET["logout"]) && $_GET["logout"] == true) {?>
-	<p class="alert-success">Deslogado com sucesso!</p>
-	<?php }?>
-<?php if(isset($_GET["login"]) && $_GET["login"] == true) {?>
-	<p class="alert-success">Logado com sucesso!</p>
-	<?php }?>
-<?php if(isset($_GET["login"]) && $_GET["login"] == 0) {?>
-	<p class="alert-danger">Usuário e senha inválidos!</p>
-	<?php }?>
 
-<?php if(isset($_GET["falhaDeSeguranca"]) && $_GET["falhaDeSeguranca"] == true) {?>
-	<p class="alert-danger">Você não tem acesso a essa funcionalidade porque você não está logado!</p>
-	<?php }?>
+<?php 
+//verificamos se a sessão com parametro success existe e retornamos uma mensagem ao usuario
+if(isset($_SESSION["success"])) {?>
+	<p class="alert-success"><?php echo $_SESSION["success"];?></p>
+	<?php 
+		unset($_SESSION["success"]);
+	}?>
+
+
+<?php 
+//verificamos se a sessão com parametro danger existe e retornamos uma mensagem ao usuario
+if(isset($_SESSION["danger"])) {?>
+	<p class="alert-danger"><?php echo $_SESSION["danger"];?></p>
+	<?php 
+		unset($_SESSION["danger"]);
+	}?>
 
 		<h1>Bem-vindo</h1>
 		<?php if(usuarioEstaLogado()) {?>

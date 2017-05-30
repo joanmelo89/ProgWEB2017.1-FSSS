@@ -9,7 +9,9 @@ function usuarioEstaLogado(){
 function verificaUsuario(){
 
 if(!usuarioEstaLogado()){
-	header("Location: index.php?falhaDeSeguranca=true");
+	//criamos um parametro via sessão para não passar parametro para a URL
+	$_SESSION["danger"] = "Você não tem acesso a essa funcionalidade";
+	header("Location: index.php");
 	die();
 	}
 }
@@ -24,6 +26,8 @@ function logaUsuario($email){
 
 function logout(){
 	session_destroy();
+	//iniciamos novamente a sessão para poder retornar uma mensagem ao usuario via parametro de sessão
+	session_start();
 }
 
 ?>

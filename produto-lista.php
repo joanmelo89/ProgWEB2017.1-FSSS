@@ -8,6 +8,13 @@ include("conecta.php");?>
 //criação da função de listagem de produtos
 
 verificaUsuario();
+?>
+<?php if(isset($_SESSION["success"])) {?>
+	<p class="alert-success"><?php echo $_SESSION["success"];?></p>
+	<?php 
+		unset($_SESSION["success"]);
+	}?>
+<?php
 $produtos = listaProdutos($conexao);
 ?>
 <table class="table table-striped table-bordered">
