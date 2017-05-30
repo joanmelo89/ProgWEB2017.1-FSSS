@@ -1,7 +1,9 @@
 <?php 
+//cria sessão
+session_start();
 //verifica se existe o cookie
 function usuarioEstaLogado(){
-	return isset($_COOKIE["usuario_logado"]);
+	return isset($_SESSION["usuario_logado"]);
 }
 //verifica se usuario está logado ou não
 function verificaUsuario(){
@@ -13,11 +15,15 @@ if(!usuarioEstaLogado()){
 }
 //mostra o usuario que está logado
 function usuarioLogado(){
-	return $_COOKIE["usuario_logado"];
+	return $_SESSION["usuario_logado"];
 }
 //cria o cookie após o login do usuario
 function logaUsuario($email){
-	setcookie("usuario_logado", $email, time() + 60);
+	$_SESSION["usuario_logado"]= $email;
+}
+
+function logout(){
+	session_destroy();
 }
 
 ?>
