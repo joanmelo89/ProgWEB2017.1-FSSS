@@ -1,6 +1,7 @@
 <?php include("cabecalho.php");?>
 <?php include("banco-produto.php");?>
 <?php include("logica-usuario.php");?>
+<?php include("mostra-alerta.php");?>
 <?php 
 //importou o srcipt que conecta que tem os parâmetros de conexão do banco de dados
 include("conecta.php");?>
@@ -9,11 +10,9 @@ include("conecta.php");?>
 
 verificaUsuario();
 ?>
-<?php if(isset($_SESSION["success"])) {?>
-	<p class="alert-success"><?php echo $_SESSION["success"];?></p>
-	<?php 
-		unset($_SESSION["success"]);
-	}?>
+<?php 
+mostraAlerta("success");
+?>
 <?php
 $produtos = listaProdutos($conexao);
 ?>
