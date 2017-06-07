@@ -31,7 +31,7 @@ foreach($produtos as $produto):
 ?>
 <tr>
 <td><?php echo $produto['nome'];?></td>
-<td><?php echo "R$ ".$produto['preco'];?></td>
+<td><?php echo "R$ ".str_replace('.', ',', $produto['preco']);?></td>
 <td><?php echo substr($produto['descricao'], 0, 20);?></td>
 <td><?php echo $produto['categoria_nome'];?></td>
 <td>

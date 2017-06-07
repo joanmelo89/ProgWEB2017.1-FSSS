@@ -4,7 +4,7 @@
 			</tr>
 			<tr>
 				<td>Preço:</td>
-				<td><input class="form-control" type="number" name="preco" value="<?php echo $produto['preco'];?>"></td>
+				<td><input class="form-control" type="text" name="preco" value="<?php echo $produto['preco'];?>"></td>
 			</tr>
 			<tr>
 				<td>Descrição</td>

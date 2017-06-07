@@ -7,9 +7,9 @@ verificaUsuario();
 //Função para inserir produtos no banco
 
 //Pega os valores do formulário que vem na URL ("name")
-$nome = $_POST["nome"];
+$nome = addslashes($_POST["nome"]);
 $preco = $_POST["preco"];
-$descricao = $_POST["descricao"];
+$descricao = addslashes($_POST["descricao"]);
 $categoria_id = $_POST["categoria_id"];
 if(array_key_exists('usado', $_POST)){
 	$usado = "true";

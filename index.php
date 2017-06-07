@@ -18,7 +18,7 @@ mostraAlerta("danger");
 		<table class="table">
 			<tr>
 				<td>Usuário</td>
-				<td><input class="form-control" type="text" name="usuario"></td>
+				<td><input class="form-control" type="email" name="usuario"></td>
 			</tr>
 			<tr>
 				<td>Senha</td>
