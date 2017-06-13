@@ -23,6 +23,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 				<li><a href="categoria-formulario.php">Adicionar Categorias</a></li>
 				<li><a href="categoria-lista.php">Listar Categorias</a></li>
 				<li><a href="sobre.php">Sobre</a></li>
+				<li><a href="contato.php">Contato</a></li>
 				
 				
 			</ul>
