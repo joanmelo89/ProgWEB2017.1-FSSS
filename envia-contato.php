@@ -13,7 +13,7 @@ $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 $mail->Username = "joanmelo89@gmail.com";
-$mail->Password = "@010203@";
+$mail->Password = "sua_senha";
 
 $mail->setFrom("joanmelo89@gmail.com", "Joan Melo");
 $mail->addAddress("joanmelo89@gmail.com");
